@@ -4,432 +4,275 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premium Apps Hub - 100+ Premium Apps Download</title>
-    
-    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #4285f4;
+            --primary-dark: #3367d6;
+            --bg: #fafafa;
+            --card: #ffffff;
+            --text: #202124;
+            --secondary: #5f6368;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        :root {
-            --primary: #3b82f6;
-            --primary-dark: #2563eb;
-            --primary-light: #60a5fa;
-            --secondary: #8b5cf6;
-            --accent: #f59e0b;
-            --dark: #0f172a;
-            --dark-light: #1e293b;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --gray-light: #94a3b8;
-            --border: #e2e8f0;
-            --success: #10b981;
-            --shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
-            --shadow-hover: 0 30px 60px -15px rgba(59,130,246,0.4);
-            --gradient: linear-gradient(145deg, #3b82f6, #8b5cf6);
-            --gradient-hover: linear-gradient(145deg, #2563eb, #7c3aed);
-        }
-
         body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            color: var(--dark);
-            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
         }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 30px;
-        }
-
-        /* Header */
         header {
-            background: linear-gradient(145deg, #1e293b, #0f172a);
+            background: linear-gradient(135deg, #4285f4 0%, #0d47a1 100%);
             color: white;
             text-align: center;
             padding: 80px 20px 60px;
             position: relative;
             overflow: hidden;
-            border-bottom: 4px solid var(--primary);
         }
-
-        header::before {
+        header::after {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
+            top: -50%; left: -50%; right: -50%; bottom: -50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            transform: rotate(30deg);
         }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
         h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 20px;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
             position: relative;
-            background: linear-gradient(135deg, #fff, #e2e8f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-
         header p {
-            font-size: 1.3rem;
-            max-width: 800px;
+            font-size: 1.2rem;
+            max-width: 700px;
             margin: 0 auto;
-            opacity: 0.9;
-            position: relative;
-            color: #cbd5e1;
+            opacity: 0.95;
         }
-
+        
         /* Stats */
         .stats {
             display: flex;
             justify-content: center;
-            gap: 60px;
-            margin: 50px 0 20px;
-            position: relative;
+            gap: 40px;
+            margin: 40px 0 0;
             flex-wrap: wrap;
         }
-
         .stat-item {
-            text-align: center;
             background: rgba(255,255,255,0.1);
+            padding: 15px 30px;
+            border-radius: 50px;
             backdrop-filter: blur(10px);
-            padding: 20px 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.2);
         }
-
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary-light);
+            font-size: 1.8rem;
+            font-weight: 700;
         }
-
-        .stat-label {
-            color: #cbd5e1;
-            font-weight: 500;
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
         }
-
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 50px 0 30px;
+            color: var(--primary-dark);
+            text-align: center;
+        }
+        
         /* Categories */
         .categories {
             display: flex;
             justify-content: center;
             gap: 12px;
-            margin: 50px 0 40px;
+            margin: 40px 0;
             flex-wrap: wrap;
         }
-
         .category-btn {
-            padding: 12px 28px;
+            padding: 10px 24px;
             background: white;
-            border: 1px solid var(--border);
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--gray);
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
         }
-
         .category-btn:hover {
             border-color: var(--primary);
             color: var(--primary);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px -5px rgba(59,130,246,0.2);
         }
-
         .category-btn.active {
-            background: var(--gradient);
+            background: var(--primary);
             color: white;
-            border: none;
-            box-shadow: 0 10px 20px -5px rgba(59,130,246,0.4);
+            border-color: var(--primary);
         }
-
+        
         /* Apps Grid */
         .app-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
         }
-
+        
+        @media (max-width: 1100px) {
+            .app-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 800px) {
+            .app-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 500px) {
+            .app-grid { grid-template-columns: 1fr; }
+        }
+        
         .app-card {
-            background: white;
-            border-radius: 28px;
+            background: var(--card);
+            border-radius: 20px;
             overflow: hidden;
             text-align: center;
-            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            padding: 30px 20px;
-            border: 1px solid var(--border);
-            position: relative;
-            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            padding: 20px 15px;
+            border: 1px solid #eee;
         }
-
-        .app-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient);
-            transform: translateX(-100%);
-            transition: transform 0.6s;
-        }
-
         .app-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 30px 40px -20px rgba(59,130,246,0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
-
-        .app-card:hover::before {
-            transform: translateX(100%);
-        }
-
         .app-icon {
-            width: 110px;
-            height: 110px;
-            border-radius: 30px;
-            margin: 0 auto 25px;
-            object-fit: cover;
-            box-shadow: 0 15px 30px -10px rgba(0,0,0,0.2);
-            border: 2px solid white;
-            transition: transform 0.3s;
-        }
-
-        .app-card:hover .app-icon {
-            transform: scale(1.1) rotate(3deg);
-        }
-
-        .app-name {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--dark);
-        }
-
-        .app-category {
-            font-size: 0.95rem;
-            color: var(--gray);
+            width: 90px;
+            height: 90px;
+            border-radius: 20px;
             margin-bottom: 15px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            object-fit: contain;
+            background: #f5f5f5;
+            padding: 10px;
         }
-
+        .app-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .app-category {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
         .app-meta {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            font-size: 0.9rem;
-            color: var(--gray-light);
-            margin-bottom: 25px;
-            padding: 10px;
-            background: #f8fafc;
-            border-radius: 30px;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 15px;
         }
-
-        .app-meta span {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
         .install-btn {
-            background: var(--gradient);
+            background: var(--primary);
             color: white;
             border: none;
-            padding: 14px 35px;
-            border-radius: 40px;
+            padding: 10px 30px;
+            border-radius: 30px;
             font-size: 1rem;
-            font-weight: 600;
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.3s;
             width: 100%;
-            box-shadow: 0 10px 20px -8px rgba(59,130,246,0.4);
         }
-
         .install-btn:hover {
-            background: var(--gradient-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px -8px rgba(59,130,246,0.5);
+            background: var(--primary-dark);
+            transform: translateY(-2px);
         }
-
-        .install-btn i {
-            margin-right: 8px;
-        }
-
+        
         /* Ad Container - Square shape */
         .ad-placeholder {
             grid-column: 1 / -1;
-            background: white;
-            border-radius: 28px;
+            background: linear-gradient(145deg, #e8f0fe, #d9e6f2);
+            border-radius: 20px;
             min-height: 280px;
-            margin: 30px 0;
+            margin: 20px 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 15px 35px -10px rgba(0,0,0,0.15);
             border: 2px dashed var(--primary);
-            overflow: hidden;
             aspect-ratio: 1 / 1;
             max-width: 300px;
             margin-left: auto;
             margin-right: auto;
             width: 100%;
+            overflow: hidden;
         }
-
+        
         .ad-placeholder > * {
             width: 100%;
             height: 100%;
-            object-fit: cover;
         }
-
-        /* Section Title */
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin: 60px 0 30px;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center;
-        }
-
-        /* Load More Button */
+        
+        /* Load More */
         .load-more {
             text-align: center;
-            margin: 60px 0;
+            margin: 50px 0;
         }
-
         .load-more-btn {
             background: white;
             color: var(--primary);
             border: 2px solid var(--primary);
-            padding: 16px 48px;
-            border-radius: 50px;
-            font-size: 1.1rem;
+            padding: 12px 40px;
+            border-radius: 40px;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 10px 20px -8px rgba(0,0,0,0.1);
         }
-
         .load-more-btn:hover {
-            background: var(--gradient);
+            background: var(--primary);
             color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px -8px rgba(59,130,246,0.4);
-            border-color: transparent;
         }
-
+        
         /* Footer */
         footer {
-            background: linear-gradient(145deg, #0f172a, #1e293b);
-            color: white;
-            padding: 70px 0 30px;
-            margin-top: 80px;
+            background: #0d1117;
+            color: #8b949e;
+            padding: 50px 20px;
+            margin-top: 50px;
         }
-
         .footer-content {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 30px;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 50px;
+            gap: 30px;
         }
-
         .footer-col h4 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 25px;
             color: white;
-            position: relative;
-            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
-
-        .footer-col h4::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--gradient);
-            border-radius: 2px;
-        }
-
         .footer-links {
             list-style: none;
         }
-
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
-
         .footer-links a {
-            color: #94a3b8;
+            color: #8b949e;
             text-decoration: none;
-            transition: all 0.3s;
         }
-
         .footer-links a:hover {
             color: white;
-            transform: translateX(5px);
-            display: inline-block;
         }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: var(--gradient);
-            transform: translateY(-3px);
-        }
-
         .copyright {
             text-align: center;
-            padding-top: 50px;
-            margin-top: 50px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #94a3b8;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #333;
         }
-
+        
         /* Modal */
         .modal {
             position: fixed;
@@ -437,113 +280,57 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15,23,42,0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(0,0,0,0.9);
             display: none;
             justify-content: center;
             align-items: center;
             z-index: 10000;
         }
-
         .modal-content {
             background: white;
-            border-radius: 40px;
+            border-radius: 30px;
             width: 90%;
-            max-width: 450px;
-            overflow: hidden;
-            transform: scale(0.9);
-            animation: modalPop 0.3s forwards;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
-        }
-
-        @keyframes modalPop {
-            to { transform: scale(1); }
-        }
-
-        .modal-header {
-            background: var(--gradient);
-            color: white;
+            max-width: 400px;
             padding: 40px;
             text-align: center;
         }
-
-        .modal-header h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .modal-body {
-            padding: 40px;
-            text-align: center;
-        }
-
         .countdown {
             font-size: 4rem;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--primary);
             margin: 20px 0;
-            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
-            width: 120px;
-            height: 120px;
-            border-radius: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 20px auto;
         }
-
-        .modal-btn {
-            background: var(--gradient);
-            color: white;
-            border: none;
-            padding: 16px 40px;
-            border-radius: 40px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            width: 100%;
-        }
-
-        .modal-btn:hover {
-            background: var(--gradient-hover);
-            transform: translateY(-3px);
-        }
-
+        
         @media (max-width: 768px) {
-            h1 { font-size: 2.8rem; }
+            h1 { font-size: 2.5rem; }
             .footer-content { grid-template-columns: repeat(2, 1fr); }
-            .stats { gap: 20px; }
-            .stat-item { padding: 15px 25px; }
         }
     </style>
 </head>
 <body>
-
-    <!-- Header -->
     <header>
         <h1>Premium Apps Hub</h1>
         <p>Download 100+ premium modified apps with all features unlocked. No subscription needed.</p>
         
         <div class="stats">
             <div class="stat-item">
-                <div class="stat-number" id="totalApps">100+</div>
-                <div class="stat-label">Premium Apps</div>
+                <div class="stat-number">100+</div>
+                <div>Premium Apps</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">1M+</div>
-                <div class="stat-label">Downloads</div>
+                <div>Downloads</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">4.8</div>
-                <div class="stat-label">User Rating</div>
+                <div>Rating</div>
             </div>
         </div>
     </header>
 
     <!-- Categories -->
     <div class="container">
-        <div class="categories" id="categories">
+        <div class="categories">
             <button class="category-btn active" onclick="filterApps('all')">All Apps</button>
             <button class="category-btn" onclick="filterApps('Streaming')">Streaming</button>
             <button class="category-btn" onclick="filterApps('Music')">Music</button>
@@ -551,19 +338,17 @@
             <button class="category-btn" onclick="filterApps('Social')">Social</button>
             <button class="category-btn" onclick="filterApps('Editor')">Editors</button>
             <button class="category-btn" onclick="filterApps('Tools')">Tools</button>
-            <button class="category-btn" onclick="filterApps('VPN')">VPN</button>
-            <button class="category-btn" onclick="filterApps('Games')">Games</button>
         </div>
     </div>
 
     <!-- Apps Grid -->
     <div class="container">
-        <h2 class="section-title">✨ Featured Premium Apps</h2>
+        <h2 class="section-title">Popular Premium Apps</h2>
         <div class="app-grid" id="appsGrid"></div>
         
         <!-- Load More Button -->
         <div class="load-more">
-            <button class="load-more-btn" id="loadMoreBtn">
+            <button class="load-more-btn" onclick="loadMoreApps()">
                 <i class="fas fa-sync-alt"></i> Load More Apps
             </button>
         </div>
@@ -574,13 +359,7 @@
         <div class="footer-content">
             <div class="footer-col">
                 <h4>Premium Apps Hub</h4>
-                <p style="color: #94a3b8;">Your trusted source for premium modified apps since 2024.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-telegram"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
+                <p>Your trusted source for premium modified apps since 2024.</p>
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
@@ -588,409 +367,41 @@
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Categories</h4>
-                <ul class="footer-links" id="footerCategories">
+                <ul class="footer-links">
                     <li><a href="#" onclick="filterApps('Streaming')">Streaming</a></li>
                     <li><a href="#" onclick="filterApps('Music')">Music</a></li>
                     <li><a href="#" onclick="filterApps('AI')">AI Tools</a></li>
-                    <li><a href="#" onclick="filterApps('Social')">Social</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Top Apps</h4>
-                <ul class="footer-links" id="topApps"></ul>
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Telegram</a></li>
+                    <li><a href="#">Email</a></li>
+                </ul>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2024 Premium Apps Hub. All rights reserved. 100+ Free Premium Apps.</p>
+            <p>&copy; 2024 Premium Apps Hub. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Download Modal -->
     <div class="modal" id="downloadModal">
         <div class="modal-content">
-            <div class="modal-header">
-                <h3><i class="fas fa-gift"></i> Please Wait</h3>
-                <p>Opening advertisement...</p>
-            </div>
-            <div class="modal-body">
-                <div id="loadingSection">
-                    <div class="countdown" id="countdown">5</div>
-                    <p style="color: var(--gray);">Please wait while we prepare your download</p>
-                </div>
-                <div id="downloadSection" style="display: none;">
-                    <i class="fas fa-check-circle" style="font-size: 4rem; color: var(--success); margin-bottom: 20px;"></i>
-                    <h4>Download Ready!</h4>
-                    <button class="modal-btn" id="finalDownloadBtn">
-                        <i class="fas fa-download"></i> Download Now
-                    </button>
-                </div>
-            </div>
+            <h3>Please Wait</h3>
+            <div class="countdown" id="countdown">5</div>
+            <p>Opening advertisement...</p>
+            <button class="install-btn" id="finalDownloadBtn" style="display: none; margin-top: 20px;">Download Now</button>
         </div>
     </div>
 
     <script>
-        // ==================== COMPLETE APP DATABASE (100+ APPS) ====================
-        const APPS = [
-            // === STREAMING APPS ===
-            { id: 1, name: 'Netflix Premium', icon: 'https://play-lh.googleusercontent.com/TBRwjS_qfJCSj1m7zZB93FnpJM5fSpMA_wUlFDLxWAb45T9RmwBvQd5cWR5viJJOhkI=s96-rw', category: 'Streaming', size: '18.5 MB', version: 'v8.1.2', link: '#' },
-            { id: 2, name: 'Amazon Prime Video', icon: 'https://play-lh.googleusercontent.com/1wT1Z1wQZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Streaming', size: '22.1 MB', version: 'v3.0.8', link: '#' },
-            { id: 3, name: 'Disney+ Hotstar', icon: 'https://play-lh.googleusercontent.com/8T1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Streaming', size: '19.3 MB', version: 'v2.5.0', link: '#' },
-            { id: 4, name: 'HBO Max', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Streaming', size: '21.7 MB', version: 'v2.8.3', link: '#' },
-            { id: 5, name: 'Apple TV+', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Streaming', size: '20.2 MB', version: 'v4.2.1', link: '#' },
-            { id: 6, name: 'Paramount+', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Streaming', size: '19.8 MB', version: 'v3.1.5', link: '#' },
-            { id: 7, name: 'Peacock Premium', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Streaming', size: '18.9 MB', version: 'v2.7.3', link: '#' },
-            { id: 8, name: 'Crunchyroll Premium', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Streaming', size: '17.5 MB', version: 'v5.3.2', link: '#' },
-
-            // === MUSIC APPS ===
-            { id: 9, name: 'Spotify Premium', icon: 'https://play-lh.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM=s96-rw', category: 'Music', size: '24.3 MB', version: 'v8.7.2', link: '#' },
-            { id: 10, name: 'YouTube Premium', icon: 'https://play-lh.googleusercontent.com/lMoItBgdPPVDJsNOVtP26EKHePkwBg-PkuY9NOrc-fumRtTFP4XhpUNk_22syN4Datc=s96-rw', category: 'Music', size: '23.1 MB', version: 'v5.2.0', link: 'https://t.me/PremiumFreeApp99/8' },
-            { id: 11, name: 'Apple Music', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Music', size: '25.7 MB', version: 'v4.3.1', link: '#' },
-            { id: 12, name: 'Tidal HiFi', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Music', size: '26.2 MB', version: 'v2.8.1', link: '#' },
-            { id: 13, name: 'Deezer Premium', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Music', size: '20.7 MB', version: 'v7.0.4', link: '#' },
-            { id: 14, name: 'SoundCloud Go', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Music', size: '19.5 MB', version: 'v6.1.3', link: '#' },
-            { id: 15, name: 'Pandora Plus', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Music', size: '18.9 MB', version: 'v5.2.1', link: '#' },
-            { id: 16, name: 'Amazon Music', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Music', size: '22.4 MB', version: 'v9.2.3', link: '#' },
-
-            // === AI APPS ===
-            { id: 17, name: 'ChatGPT Plus', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'AI', size: '32.1 MB', version: 'v1.2.3', link: '#' },
-            { id: 18, name: 'Midjourney Pro', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'AI', size: '28.4 MB', version: 'v5.0.1', link: '#' },
-            { id: 19, name: 'Claude AI Pro', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'AI', size: '29.6 MB', version: 'v2.1.0', link: '#' },
-            { id: 20, name: 'DALL-E 3 Pro', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'AI', size: '27.8 MB', version: 'v3.2.1', link: '#' },
-            { id: 21, name: 'GitHub Copilot', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'AI', size: '31.2 MB', version: 'v1.5.0', link: '#' },
-            { id: 22, name: 'Bard Advanced', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'AI', size: '30.3 MB', version: 'v2.0.2', link: '#' },
-            { id: 23, name: 'Perplexity Pro', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'AI', size: '26.5 MB', version: 'v3.1.0', link: '#' },
-            { id: 24, name: 'Poe Premium', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'AI', size: '25.9 MB', version: 'v2.4.1', link: '#' },
-
-            // === SOCIAL APPS ===
-            { id: 25, name: 'Telegram Premium', icon: 'https://play-lh.googleusercontent.com/ZU9cSsyIJZo6Oy7HTHiEPwZg0m2Crep-d5ZrfajqtsH-qgUXSqKpNA2FpPDTn-7qA5Q=s96-rw', category: 'Social', size: '34.2 MB', version: 'v9.6.1', link: 'https://t.me/PremiumFreeApp99/7' },
-            { id: 26, name: 'WhatsApp Plus', icon: 'https://play-lh.googleusercontent.com/bYtqbOcTYOlgc6gqZ2rwb8lptHuwlNE75zYJu6Bn076-hTmvd96HH-6v7S0YUAAJXoJN=s96-rw', category: 'Social', size: '35.7 MB', version: 'v2.23.1', link: '#' },
-            { id: 27, name: 'Instagram Plus', icon: 'https://play-lh.googleusercontent.com/9wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Social', size: '36.8 MB', version: 'v3.2.1', link: '#' },
-            { id: 28, name: 'Facebook Premium', icon: 'https://play-lh.googleusercontent.com/ccWDU4A7fX1R24v-vvT480ySh26AYp97g1VrIB_FIdjRcuQB2JP2WdY7h_wVVAeSpg=s96-rw', category: 'Social', size: '38.1 MB', version: 'v4.5.2', link: '#' },
-            { id: 29, name: 'Twitter Premium', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Social', size: '32.5 MB', version: 'v9.2.3', link: '#' },
-            { id: 30, name: 'TikTok Premium', icon: 'https://play-lh.googleusercontent.com/7Ak4Ye7wNUtheIvSKnVgGL_OIZWjGPZNV6TP_3XLxNxu0cs5HL1zOZx1m5yD0Z5Z5Z=s96-rw', category: 'Social', size: '37.2 MB', version: 'v3.4.1', link: '#' },
-            { id: 31, name: 'Snapchat Plus', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Social', size: '33.9 MB', version: 'v12.1.0', link: '#' },
-            { id: 32, name: 'LinkedIn Premium', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Social', size: '29.8 MB', version: 'v4.3.2', link: '#' },
-
-            // === EDITOR APPS ===
-            { id: 33, name: 'CapCut Premium', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Editor', size: '42.3 MB', version: 'v10.2.1', link: '#' },
-            { id: 34, name: 'InShot Pro', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Editor', size: '39.7 MB', version: 'v1.9.0', link: '#' },
-            { id: 35, name: 'Lightroom Premium', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Editor', size: '47.2 MB', version: 'v8.1.0', link: '#' },
-            { id: 36, name: 'Picsart Gold', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Editor', size: '44.6 MB', version: 'v20.1.0', link: '#' },
-            { id: 37, name: 'Canva Pro', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Editor', size: '46.3 MB', version: 'v12.5.2', link: '#' },
-            { id: 38, name: 'Adobe Express', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Editor', size: '49.1 MB', version: 'v6.2.0', link: '#' },
-            { id: 39, name: 'KineMaster Pro', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Editor', size: '45.1 MB', version: 'v6.2.3', link: '#' },
-            { id: 40, name: 'Alight Motion', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Editor', size: '41.5 MB', version: 'v4.1.2', link: '#' },
-
-            // === TOOLS ===
-            { id: 41, name: 'microG Services', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Tools', size: '8.2 MB', version: 'v0.2.27', link: 'https://t.me/PremiumFreeApp99/9' },
-            { id: 42, name: 'VLC Media Player', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Tools', size: '28.6 MB', version: 'v3.5.4', link: '#' },
-            { id: 43, name: 'MX Player Pro', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Tools', size: '27.9 MB', version: 'v1.46.2', link: '#' },
-            { id: 44, name: 'Solid Explorer', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Tools', size: '19.8 MB', version: 'v2.8.2', link: '#' },
-            { id: 45, name: 'Nova Launcher Prime', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Tools', size: '20.3 MB', version: 'v8.0.2', link: '#' },
-            { id: 46, name: 'ZArchiver Pro', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Tools', size: '15.2 MB', version: 'v1.0.9', link: '#' },
-            { id: 47, name: 'Google Camera', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Tools', size: '35.2 MB', version: 'v8.7.0', link: '#' },
-            { id: 48, name: 'Gboard Premium', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Tools', size: '22.5 MB', version: 'v12.4.1', link: '#' },
-
-            // === VPN APPS ===
-            { id: 49, name: 'NordVPN', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'VPN', size: '26.3 MB', version: 'v5.8.2', link: '#' },
-            { id: 50, name: 'ExpressVPN', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'VPN', size: '24.7 MB', version: 'v9.4.1', link: '#' },
-            { id: 51, name: 'Surfshark', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'VPN', size: '22.9 MB', version: 'v3.6.0', link: '#' },
-            { id: 52, name: 'CyberGhost', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'VPN', size: '25.1 MB', version: 'v7.2.4', link: '#' },
-
-            // === GAMES ===
-            { id: 53, name: 'Minecraft Premium', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Games', size: '85.3 MB', version: 'v1.20.2', link: '#' },
-            { id: 54, name: 'PUBG Mobile', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Games', size: '92.5 MB', version: 'v2.5.0', link: '#' },
-            { id: 55, name: 'Call of Duty', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Games', size: '88.7 MB', version: 'v1.8.3', link: '#' },
-            { id: 56, name: 'Garena Free Fire', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Games', size: '79.2 MB', version: 'v2.0.1', link: '#' }
-        ];
-
-        // ==================== AD CODES ====================
-        const AD_CODES = [
-            // AD 1
-            `<script async="async" data-cfasync="false" src="https://pl28716606.effectivegatecpm.com/80efa1def2927dc28174f5bf6f87d38f/invoke.js"></script>
-             <div id="container-80efa1def2927dc28174f5bf6f87d38f"></div>`,
-            
-            // AD 2
-            `<script async="async" data-cfasync="false" src="https://pl28716606.effectivegatecpm.com/80efa1def2927dc28174f5bf6f87d38f/invoke.js"></script>
-             <div id="container-80efa1def2927dc28174f5bf6f87d38f"></div>`,
-            
-            // AD 3
-            `<script async="async" data-cfasync="false" src="https://pl28716606.effectivegatecpm.com/80efa1def2927dc28174f5bf6f87d38f/invoke.js"></script>
-             <div id="container-80efa1def2927dc28174f5bf6f87d38f"></div>`,
-            
-            // AD 4
-            `<script async="async" data-cfasync="false" src="https://pl28716606.effectivegatecpm.com/80efa1def2927dc28174f5bf6f87d38f/invoke.js"></script>
-             <div id="container-80efa1def2927dc28174f5bf6f87d38f"></div>`
-        ];
-
-        // ==================== SYSTEM VARIABLES ====================
-        let currentFilter = 'all';
-        let displayedApps = 24;
-        let currentApp = null;
-        let timer = null;
-        let seconds = 5;
-
-        // ==================== RENDER APPS WITH ADS ====================
-        function renderApps() {
-            const grid = document.getElementById('appsGrid');
-            
-            let filtered = currentFilter === 'all' ? APPS : APPS.filter(app => app.category === currentFilter);
-            let html = '';
-            let adIndex = 0;
-            
-            filtered.slice(0, displayedApps).forEach((app, index) => {
-                // App Card
-                html += `
-                    <div class="app-card">
-                        <img src="${app.icon}" class="app-icon" alt="${app.name}" onerror="this.src='https://via.placeholder.com/110x110?text=App'">
-                        <div class="app-name">${app.name}</div>
-                        <div class="app-category">${app.category}</div>
-                        <div class="app-meta">
-                            <span><i class="fas fa-database"></i> ${app.size}</span>
-                            <span><i class="fas fa-code-branch"></i> ${app.version}</span>
-                        </div>
-                        <button class="install-btn" onclick="openModal('${app.id}')">
-                            <i class="fas fa-download"></i> Install
-                        </button>
-                    </div>
-                `;
-                
-                // প্রতি ৬টি অ্যাপ পর এড বসান (Square shape)
-                if ((index + 1) % 6 === 0 && AD_CODES[adIndex]) {
-                    html += `<div class="ad-placeholder">${AD_CODES[adIndex]}</div>`;
-                    adIndex++;
-                    if (adIndex >= AD_CODES.length) adIndex = 0;
-                }
-            });
-            
-            grid.innerHTML = html;
-            
-            // Load More button visibility
-            document.getElementById('loadMoreBtn').style.display = displayedApps >= filtered.length ? 'none' : 'inline-block';
-        }
-
-        // ==================== FILTER APPS ====================
-        function filterApps(category) {
-            currentFilter = category;
-            displayedApps = 24;
-            
-            document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            renderApps();
-        }
-
-        // ==================== LOAD MORE ====================
-        document.getElementById('loadMoreBtn').addEventListener('click', function() {
-            displayedApps += 12;
-            renderApps();
-        });
-
-        // ==================== MODAL FUNCTIONS ====================
-        function openModal(appId) {
-            currentApp = APPS.find(a => a.id == appId);
-            if (!currentApp) return;
-            
-            seconds = 5;
-            document.getElementById('countdown').textContent = seconds;
-            document.getElementById('loadingSection').style.display = 'block';
-            document.getElementById('downloadSection').style.display = 'none';
-            document.getElementById('downloadModal').style.display = 'flex';
-            
-            window.open('https://www.effectivegatecpm.com/rub6ahgwkm?key=3cd1f30148995a8b2a2e347ace457880', '_blank');
-            
-            startCountdown();
-        }
-
-        function startCountdown() {
-            if (timer) clearInterval(timer);
-            
-            timer = setInterval(() => {
-                seconds--;
-                document.getElementById('countdown').textContent = seconds;
-                
-                if (seconds <= 0) {
-                    clearInterval(timer);
-                    document.getElementById('loadingSection').style.display = 'none';
-                    document.getElementById('downloadSection').style.display = 'block';
-                    
-                    document.getElementById('finalDownloadBtn').onclick = function() {
-                        window.location.href = currentApp.link;
-                    };
-                }
-            }, 1000);
-        }
-
-        // Close modal
-        window.onclick = function(e) {
-            const modal = document.getElementById('downloadModal');
-            if (e.target === modal) {
-                modal.style.display = 'none';
-                clearInterval(timer);
-            }
-        };
-
-        // ==================== INITIALIZE ====================
-        document.addEventListener('DOMContentLoaded', function() {
-            renderApps();
-            
-            // Top Apps in footer
-            const topApps = APPS.slice(0, 5);
-            const topAppsHtml = topApps.map(app => `<li><a href="#" onclick="openModal('${app.id}')">${app.name}</a></li>`).join('');
-            document.getElementById('topApps').innerHTML = topAppsHtml;
-        });
-    </script>
-    
-    <!-- Global Script -->
-    <script src="https://pl28716588.effectivegatecpm.com/bd/d2/f6/bdd2f6aa9b2871d53171c67ed6783b32.js"></script>
-
-</body>
-</html>            margin-bottom: 20px;
-            object-fit: contain;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-            background: #f0f0f0;
-        }
-        .app-name {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .app-category {
-            font-size: 0.95rem;
-            color: var(--secondary);
-            margin-bottom: 16px;
-        }
-        .install-btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 12px 40px;
-            border-radius: 50px;
-            font-size: 1.05rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .install-btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-        .ad-placeholder {
-            grid-column: 1 / -1;
-            background: linear-gradient(90deg, #e8f0fe, #f1f3f4);
-            border-radius: 24px;
-            min-height: 160px;
-            margin: 50px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: #555;
-            font-style: italic;
-            box-shadow: var(--shadow);
-        }
-        footer {
-            background: #0d1117;
-            color: #8b949e;
-            text-align: center;
-            padding: 50px 20px;
-            font-size: 0.95rem;
-        }
-        @media (max-width: 768px) {
-            h1 { font-size: 2.8rem; }
-            .app-grid { gap: 24px; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
-            header { padding: 80px 15px 60px; }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Premium Apps Hub</h1>
-        <p>Discover & Download 100+ Premium Apps for Everyday Use – Fast, Secure & Ad-Supported</p>
-    </header>
-
-    <div class="search-bar">
-        <input type="text" placeholder="Search apps (e.g., YouTube, WhatsApp, TikTok...)">
-    </div>
-
-    <div class="container">
-        <h2 class="section-title">Popular Premium Apps</h2>
-        <div class="app-grid">
-
-            <!-- Popular apps at top -->
-            <div class="app-card">
-                <img src="https://play-lh.googleusercontent.com/7Ak4Ye7wNUtheIvSKnVgGL_OIZWjGPZNV6TP_3XLxNxu0cs5HL1zOZx1m5yD0Z5Z5Z" class="app-icon" alt="TikTok">
-                <div class="app-name">TikTok Premium</div>
-                <div class="app-category">Short Videos & Entertainment</div>
-                <button class="install-btn" onclick="redirectWithAd('https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/tiktok', 'https://your-download.com/tiktok.apk')">Install</button>
-            </div>
-
-            <div class="app-card">
-                <img src="https://play-lh.googleusercontent.com/bYtqbOcTYOlgc6gqZ2rwb8lptHuwlNE75zYJu6Bn076-hTmvd96HH-6v7S0YUAAJXoJN" class="app-icon" alt="Instagram">
-                <div class="app-name">Instagram Premium</div>
-                <div class="app-category">Social Media & Photos</div>
-                <button class="install-btn" onclick="redirectWithAd('https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/instagram', 'https://your-download.com/instagram.apk')">Install</button>
-            </div>
-
-            <div class="app-card">
-                <img src="https://play-lh.googleusercontent.com/bYs9D0wX5qZ5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z" class="app-icon" alt="WhatsApp"> <!-- Replace with actual if needed -->
-                <div class="app-name">WhatsApp Premium</div>
-                <div class="app-category">Messaging & Calls</div>
-                <button class="install-btn" onclick="redirectWithAd('https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/whatsapp', 'https://your-download.com/whatsapp.apk')">Install</button>
-            </div>
-
-            <div class="ad-placeholder"><script async="async" data-cfasync="false" src="https://pl28716606.effectivegatecpm.com/80efa1def2927dc28174f5bf6f87d38f/invoke.js"></script>
-<div id="container-80efa1def2927dc28174f5bf6f87d38f"></div></div>
-
-            <!-- YouTube & Telegram in the middle section -->
-            <div class="app-card">
-                <img src="https://play-lh.googleusercontent.com/EM2j9B2fZ5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z" class="app-icon" alt="YouTube"> <!-- Actual YouTube icon URL example -->
-                <div class="app-name">YouTube Premium</div>
-                <div class="app-category">Video Streaming</div>
-                <button class="install-btn" onclick="redirectWithAd('https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/youtube', 'https://your-download.com/youtube.apk')">Install</button>
-            </div>
-
-            <div class="app-card">
-                <img src="https://play-lh.googleusercontent.com/5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z" class="app-icon" alt="Telegram">
-                <div class="app-name">Telegram Premium</div>
-                <div class="app-category">Secure Messaging</div>
-                <button class="install-btn" onclick="redirectWithAd('https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/telegram', 'https://your-download.com/telegram.apk')">Install</button>
-            </div>
-
-            <div class="app-card">
-                <img src="https://play-lh.googleusercontent.com/imo-premium-icon-url" class="app-icon" alt="Imo">
-                <div class="app-name">Imo Premium</div>
-                <div class="app-category">Video Calls</div>
-                <button class="install-btn" onclick="redirectWithAd('https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/imo', 'https://your-download.com/imo.apk')">Install</button>
-            </div>
-
-            <!-- Add as many as you want here – copy-paste format -->
-            <div class="app-card">
-                <img src="https://play-lh.googleusercontent.com/Facebook-icon-url-here" class="app-icon" alt="Facebook">
-                <div class="app-name">Facebook Premium</div>
-                <div class="app-category">Social Networking</div>
-                <button class="install-btn" onclick="redirectWithAd('https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/facebook', 'https://your-download.com/facebook.apk')">Install</button>
-            </div>
-
-            <!-- Example for more stability: add 20-30+ like this, insert ad every 4-6 cards -->
-            <div class="ad-placeholder"><script async="async" data-cfasync="false" src="https://pl28716606.effectivegatecpm.com/80efa1def2927dc28174f5bf6f87d38f/invoke.js"></script>
-<div id="container-80efa1def2927dc28174f5bf6f87d38f"></div></div>
-
-            <!-- Continue adding cards... To reach 100+, duplicate the card structure and update name/icon/link -->
-
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Premium Apps Hub. All rights reserved. | Fast Premium App Downloads | Powered by Ads</p>
-    </footer>
-
-    <script>
+        // ==================== আপনার দেওয়া ফাংশন ====================
         function redirectWithAd(adUrl, downloadUrl) {
             // Open ad in new tab
             const adWindow = window.open(adUrl, '_blank');
@@ -1007,6 +418,173 @@
                 }, 5000);
             }
         }
+
+        // ==================== COMPLETE APP DATABASE ====================
+        const APPS = [
+            // === STREAMING APPS ===
+            { id: 1, name: 'Netflix Premium', icon: 'https://play-lh.googleusercontent.com/TBRwjS_qfJCSj1m7zZB93FnpJM5fSpMA_wUlFDLxWAb45T9RmwBvQd5cWR5viJJOhkI=s96-rw', category: 'Streaming', size: '18.5 MB', version: 'v8.1.2', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/netflix', downloadUrl: '#' },
+            { id: 2, name: 'Amazon Prime Video', icon: 'https://play-lh.googleusercontent.com/1wT1Z1wQZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Streaming', size: '22.1 MB', version: 'v3.0.8', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/prime', downloadUrl: '#' },
+            { id: 3, name: 'Disney+ Hotstar', icon: 'https://play-lh.googleusercontent.com/8T1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Streaming', size: '19.3 MB', version: 'v2.5.0', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/disney', downloadUrl: '#' },
+            { id: 4, name: 'HBO Max', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Streaming', size: '21.7 MB', version: 'v2.8.3', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/hbo', downloadUrl: '#' },
+            
+            // === MUSIC APPS (YouTube here - middle) ===
+            { id: 5, name: 'Spotify Premium', icon: 'https://play-lh.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM=s96-rw', category: 'Music', size: '24.3 MB', version: 'v8.7.2', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/spotify', downloadUrl: '#' },
+            { id: 6, name: 'YouTube Premium', icon: 'https://play-lh.googleusercontent.com/lMoItBgdPPVDJsNOVtP26EKHePkwBg-PkuY9NOrc-fumRtTFP4XhpUNk_22syN4Datc=s96-rw', category: 'Music', size: '23.1 MB', version: 'v5.2.0', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/youtube', downloadUrl: 'https://t.me/PremiumFreeApp99/8' },
+            
+            // === AD AFTER 6 APPS ===
+            
+            // === SOCIAL APPS (Telegram here) ===
+            { id: 7, name: 'Telegram Premium', icon: 'https://play-lh.googleusercontent.com/ZU9cSsyIJZo6Oy7HTHiEPwZg0m2Crep-d5ZrfajqtsH-qgUXSqKpNA2FpPDTn-7qA5Q=s96-rw', category: 'Social', size: '34.2 MB', version: 'v9.6.1', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/telegram', downloadUrl: 'https://t.me/PremiumFreeApp99/7' },
+            { id: 8, name: 'WhatsApp Plus', icon: 'https://play-lh.googleusercontent.com/bYtqbOcTYOlgc6gqZ2rwb8lptHuwlNE75zYJu6Bn076-hTmvd96HH-6v7S0YUAAJXoJN=s96-rw', category: 'Social', size: '35.7 MB', version: 'v2.23.1', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/whatsapp', downloadUrl: '#' },
+            { id: 9, name: 'Instagram Plus', icon: 'https://play-lh.googleusercontent.com/9wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Social', size: '36.8 MB', version: 'v3.2.1', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/instagram', downloadUrl: '#' },
+            { id: 10, name: 'Facebook Premium', icon: 'https://play-lh.googleusercontent.com/ccWDU4A7fX1R24v-vvT480ySh26AYp97g1VrIB_FIdjRcuQB2JP2WdY7h_wVVAeSpg=s96-rw', category: 'Social', size: '38.1 MB', version: 'v4.5.2', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/facebook', downloadUrl: '#' },
+            { id: 11, name: 'TikTok Premium', icon: 'https://play-lh.googleusercontent.com/7Ak4Ye7wNUtheIvSKnVgGL_OIZWjGPZNV6TP_3XLxNxu0cs5HL1zOZx1m5yD0Z5Z5Z=s96-rw', category: 'Social', size: '37.2 MB', version: 'v3.4.1', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/tiktok', downloadUrl: '#' },
+            
+            // === AD AFTER 11 APPS ===
+            
+            // === AI APPS ===
+            { id: 12, name: 'ChatGPT Plus', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'AI', size: '32.1 MB', version: 'v1.2.3', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/chatgpt', downloadUrl: '#' },
+            { id: 13, name: 'Midjourney Pro', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'AI', size: '28.4 MB', version: 'v5.0.1', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/midjourney', downloadUrl: '#' },
+            
+            // === TOOLS APPS (microG here) ===
+            { id: 14, name: 'microG Services', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Tools', size: '8.2 MB', version: 'v0.2.27', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/microg', downloadUrl: 'https://t.me/PremiumFreeApp99/9' },
+            { id: 15, name: 'VLC Media Player', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Tools', size: '28.6 MB', version: 'v3.5.4', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/vlc', downloadUrl: '#' },
+            { id: 16, name: 'MX Player Pro', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Tools', size: '27.9 MB', version: 'v1.46.2', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/mxplayer', downloadUrl: '#' },
+            
+            // === EDITOR APPS ===
+            { id: 17, name: 'CapCut Premium', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Editor', size: '42.3 MB', version: 'v10.2.1', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/capcut', downloadUrl: '#' },
+            { id: 18, name: 'InShot Pro', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Editor', size: '39.7 MB', version: 'v1.9.0', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/inshot', downloadUrl: '#' },
+            { id: 19, name: 'Lightroom Premium', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Editor', size: '47.2 MB', version: 'v8.1.0', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/lightroom', downloadUrl: '#' },
+            { id: 20, name: 'Picsart Gold', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Editor', size: '44.6 MB', version: 'v20.1.0', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/picsart', downloadUrl: '#' },
+            { id: 21, name: 'Canva Pro', icon: 'https://play-lh.googleusercontent.com/1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ1wZ=s96-rw', category: 'Editor', size: '46.3 MB', version: 'v12.5.2', adUrl: 'https://www.effectivegatecpm.com/tyzb50yf?key=feb43aaa1fb709cd44854c51872c9f58/canva', downloadUrl: '#' }
+        ];
+
+        // ==================== AD CODES (Square ads) ====================
+        const AD_CODES = [
+            `<script async="async" data-cfasync="false" src="https://pl28716606.effectivegatecpm.com/80efa1def2927dc28174f5bf6f87d38f/invoke.js"></script>
+             <div id="container-80efa1def2927dc28174f5bf6f87d38f"></div>`,
+             
+            `<script async="async" data-cfasync="false" src="https://pl28716606.effectivegatecpm.com/80efa1def2927dc28174f5bf6f87d38f/invoke.js"></script>
+             <div id="container-80efa1def2927dc28174f5bf6f87d38f"></div>`,
+             
+            `<script async="async" data-cfasync="false" src="https://pl28716606.effectivegatecpm.com/80efa1def2927dc28174f5bf6f87d38f/invoke.js"></script>
+             <div id="container-80efa1def2927dc28174f5bf6f87d38f"></div>`
+        ];
+
+        // ==================== SYSTEM VARIABLES ====================
+        let currentFilter = 'all';
+        let displayedApps = 12;
+        let currentApp = null;
+        let timer = null;
+        let seconds = 5;
+
+        // ==================== RENDER APPS ====================
+        function renderApps() {
+            const grid = document.getElementById('appsGrid');
+            
+            let filtered = currentFilter === 'all' ? APPS : APPS.filter(app => app.category === currentFilter);
+            let html = '';
+            let adIndex = 0;
+            
+            filtered.slice(0, displayedApps).forEach((app, index) => {
+                html += `
+                    <div class="app-card">
+                        <img src="${app.icon}" class="app-icon" alt="${app.name}" onerror="this.src='https://via.placeholder.com/90x90?text=App'">
+                        <div class="app-name">${app.name}</div>
+                        <div class="app-category">${app.category}</div>
+                        <div class="app-meta">
+                            <span><i class="fas fa-database"></i> ${app.size}</span>
+                            <span><i class="fas fa-code-branch"></i> ${app.version}</span>
+                        </div>
+                        <button class="install-btn" onclick="handleInstall('${app.id}')">
+                            <i class="fas fa-download"></i> Install
+                        </button>
+                    </div>
+                `;
+                
+                // প্রতি 4টি অ্যাপ পর এড বসান (Square)
+                if ((index + 1) % 4 === 0 && adIndex < AD_CODES.length) {
+                    html += `<div class="ad-placeholder">${AD_CODES[adIndex]}</div>`;
+                    adIndex++;
+                }
+            });
+            
+            grid.innerHTML = html;
+        }
+
+        // ==================== HANDLE INSTALL (uses your redirectWithAd function) ====================
+        function handleInstall(appId) {
+            currentApp = APPS.find(a => a.id == appId);
+            if (!currentApp) return;
+            
+            // Show modal
+            seconds = 5;
+            document.getElementById('countdown').textContent = seconds;
+            document.getElementById('finalDownloadBtn').style.display = 'none';
+            document.getElementById('downloadModal').style.display = 'flex';
+            
+            // Start countdown
+            startCountdown();
+        }
+
+        function startCountdown() {
+            if (timer) clearInterval(timer);
+            
+            timer = setInterval(() => {
+                seconds--;
+                document.getElementById('countdown').textContent = seconds;
+                
+                if (seconds <= 0) {
+                    clearInterval(timer);
+                    document.getElementById('countdown').style.display = 'none';
+                    const btn = document.getElementById('finalDownloadBtn');
+                    btn.style.display = 'block';
+                    btn.onclick = function() {
+                        // Use your redirectWithAd function
+                        redirectWithAd(currentApp.adUrl, currentApp.downloadUrl);
+                        document.getElementById('downloadModal').style.display = 'none';
+                    };
+                }
+            }, 1000);
+        }
+
+        // ==================== FILTER APPS ====================
+        function filterApps(category) {
+            currentFilter = category;
+            displayedApps = 12;
+            
+            document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            renderApps();
+        }
+
+        // ==================== LOAD MORE ====================
+        function loadMoreApps() {
+            displayedApps += 12;
+            renderApps();
+        }
+
+        // ==================== CLOSE MODAL ====================
+        window.onclick = function(e) {
+            const modal = document.getElementById('downloadModal');
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                clearInterval(timer);
+            }
+        };
+
+        // ==================== INITIALIZE ====================
+        document.addEventListener('DOMContentLoaded', function() {
+            renderApps();
+        });
     </script>
+    
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <!-- Global Script -->
+    <script src="https://pl28716588.effectivegatecpm.com/bd/d2/f6/bdd2f6aa9b2871d53171c67ed6783b32.js"></script>
+
 </body>
 </html>
